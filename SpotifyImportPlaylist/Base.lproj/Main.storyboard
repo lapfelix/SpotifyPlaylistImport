@@ -669,14 +669,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="SpotifyImportPlaylist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="72"/>
+                        <rect key="frame" x="0.0" y="0.0" width="401" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="nad-Gm-krz">
-                                <rect key="frame" x="20" y="48" width="270" height="20"/>
-                            </progressIndicator>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9I-He-8Wa">
-                                <rect key="frame" x="14" y="0.0" width="282" height="32"/>
+                                <rect key="frame" x="4" y="1" width="376" height="32"/>
                                 <buttonCell key="cell" type="push" title="Choose iTunes XML playlist" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xKf-pE-cug">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -685,8 +682,27 @@
                                     <action selector="chooseXML:" target="XfG-lQ-9wD" id="am1-hf-arX"/>
                                 </connections>
                             </button>
+                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6k-Q6-p8i">
+                                <rect key="frame" x="10" y="35" width="89" height="26"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="20" id="fco-2D-may">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </comboBoxCell>
+                            </comboBox>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJ7-eZ-jRx">
+                                <rect key="frame" x="8" y="64" width="59" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Country:" id="Fuc-5f-LpF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="nad-Gm-krz">
+                                <rect key="frame" x="104" y="62" width="270" height="20"/>
+                            </progressIndicator>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-wL-2gR">
-                                <rect key="frame" x="18" y="34" width="274" height="17"/>
+                                <rect key="frame" x="102" y="48" width="274" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="A1F-wB-3Tc">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -696,13 +712,14 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="countryComboBox" destination="fco-2D-may" id="EHX-eS-DS2"/>
                         <outlet property="progressIndicator" destination="nad-Gm-krz" id="ExN-Dl-ZAj"/>
                         <outlet property="statusLabel" destination="q1g-wL-2gR" id="7Q0-6R-8O5"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="556"/>
+            <point key="canvasLocation" x="35.5" y="565.5"/>
         </scene>
     </scenes>
 </document>

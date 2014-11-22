@@ -14,6 +14,7 @@ var notFoundURIs = ""
 var totalTracks = 0;
 var matchedTracks = 0;
 var notFoundTracks = 0;
+let marketCodes = ["AD","AE","AF","AG","AI","AL","AM","AN","AO","AQ","AR","AS","AT","AU","AW","AX","AZ","BA","BB","BD","BE","BF","BG","BH","BI","BJ","BM","BN","BO","BR","BS","BT","BV","BW","BY","BZ","CA","CC","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CU","CV","CX","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET","FI","FJ","FK","FM","FO","FR","GA","GB","GD","GE","GF","GG","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY","HK","HM","HN","HR","HT","HU","ID","IE","IL","IN","IO","IQ","IR","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KP","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY","MA","MC","MD","ME","MG","MH","MK","ML","MM","MN","MO","MP","MQ","MR","MS","MT","MU","MV","MW","MX","MY","MZ","NA","NC","NE","NF","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PW","PY","QA","RE","RO","RS","RU","RW","SA","SB","SC","SD","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","ST","SV","SY","SZ","TC","TD","TF","TG","TH","TJ","TK","TL","TM","TN","TO","TR","TT","TV","TW","TZ","UA","UG","UM","US","UY","UZ","VA","VC","VE","VG","VI","VN","VU","WF","WS","YE","YT","ZA","ZM","ZW"]
 
 class Request : NSObject {
     func send(url: String, f: (String)-> ()) {
@@ -29,6 +30,7 @@ class Request : NSObject {
 class ViewController: NSViewController, NSOpenSavePanelDelegate {
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet weak var countryComboBox: NSComboBoxCell!
     @IBAction func chooseXML(sender: NSButton) {
         
         var openPanel:NSOpenPanel = NSOpenPanel();
@@ -118,6 +120,7 @@ class ViewController: NSViewController, NSOpenSavePanelDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        countryComboBox.addItemsWithObjectValues(marketCodes)
     }
     
     override var representedObject: AnyObject? {
@@ -135,7 +138,9 @@ class ViewController: NSViewController, NSOpenSavePanelDelegate {
             requestString += "+artist:"
             requestString += artistName.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
         }
-        requestString += "&type=track&market=ca&limit=1"
+        var countryCode = marketCodes[countryComboBox.indexOfSelectedItem]
+        println(countryCode)
+        requestString += "&type=track&market=\(marketCodes[countryComboBox.indexOfSelectedItem])&limit=1"
         
         request.send(requestString, {(result: String)-> () in
             var resultData = result.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
