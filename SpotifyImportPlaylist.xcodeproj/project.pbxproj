@@ -25,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC0EC45E1A21730400044C05 /* SpotifyImportPlaylist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SpotifyImportPlaylist.entitlements; sourceTree = "<group>"; };
 		DC3AC7F41A209F9500705E12 /* SpotifyImportPlaylist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyImportPlaylist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3AC7F81A209F9500705E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3AC7F91A209F9500705E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		DC3AC7F61A209F9500705E12 /* SpotifyImportPlaylist */ = {
 			isa = PBXGroup;
 			children = (
+				DC0EC45E1A21730400044C05 /* SpotifyImportPlaylist.entitlements */,
 				DC3AC7F91A209F9500705E12 /* AppDelegate.swift */,
 				DC3AC7FB1A209F9500705E12 /* ViewController.swift */,
 				DC3AC7FD1A209F9500705E12 /* Images.xcassets */,
@@ -158,6 +160,11 @@
 				TargetAttributes = {
 					DC3AC7F31A209F9500705E12 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					DC3AC8051A209F9500705E12 = {
 						CreatedOnToolsVersion = 6.1;
@@ -277,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -314,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -324,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpotifyImportPlaylist/SpotifyImportPlaylist.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SpotifyImportPlaylist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -336,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpotifyImportPlaylist/SpotifyImportPlaylist.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SpotifyImportPlaylist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
