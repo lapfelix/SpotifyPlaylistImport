@@ -8,3 +8,4 @@ To use it, export your iTunes playlist to XML (File > Library > Export Playlist)
 Spotify allows drag and drop of songs from iTunes but in some cases this app will do it better.
 
 It is quite buggy right now. Contributions and pull requests are more than welcome.
+The main purpose of this app was to learn Swift and it solved a problem for me with Spotify.
